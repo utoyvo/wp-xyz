@@ -13,6 +13,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<?php get_sidebar( 'content-bottom' ); ?>
+
 		<div class="site-info container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-xyz' ) ); ?>" target="_blank">
 				<?php
