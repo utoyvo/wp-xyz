@@ -39,18 +39,20 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle hamburger hamburger--squeeze" aria-controls="primary-menu" aria-expanded="false">
-				<div class="hamburger-box">
-					<div class="hamburger-inner"></div>
-				</div>
-			</button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) ); ?>
-		</nav><!-- #site-navigation -->
+		<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle hamburger hamburger--squeeze" aria-controls="primary-menu" aria-expanded="false">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</button>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) ); ?>
+			</nav><!-- #site-navigation -->
+		<?php endif; ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content container">
