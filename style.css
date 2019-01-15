@@ -15,7 +15,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 WP XYZ is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -24,6 +23,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Accessibility
 # Alignments
 # Clearings
+# Content
+	## Posts and pages
+# Media
+	## Captions
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -294,4 +297,62 @@ template {
 .site-content:after,
 .site-footer:after {
 	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+.updated:not(.published) {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	background: #f9f9f9 !important;
+}
+
+.sticky .entry-meta:before {
+	content: "\f08d";
+	font-family: "Font Awesome 5 Free";
+	font-size: 16px;
+	font-weight: 900;
+	vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	max-width: 100%;
+	margin: 0;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption .wp-caption-text {
+	padding: 16px 0;
+	color: #888;
+	text-align: center;
 }
