@@ -21,6 +21,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Elements
 # Accessibility
 # Alignments
 # Clearings
@@ -299,6 +300,116 @@ mark, ins {
 
 big {
 	font-size: 1.4em;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #eee;
+}
+
+hr {
+	height: 1px;
+	margin-bottom: 16px;
+	background: #ddd;
+	border: 0;
+}
+
+ul, ol {
+	margin: 0 0 16px 32px;
+	padding: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li {
+	margin-bottom: 8px;
+}
+
+li > ul,
+li > ol,
+.sub-menu,
+.children {
+	margin-bottom: 0;
+	margin-left: 16px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 16px 16px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	margin: 16px 0;
+}
+
+table,
+th,
+td {
+	border: 1px solid #ddd;
+}
+
+table {
+	width: 100%;
+	margin: 0 0 16px;
+	border-radius: 0;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	table-layout: fixed;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+caption {
+	margin-bottom: 16px;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+th,
+td {
+	padding: 8px;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
+}
+
+td {
+	border-width: 0 1px 1px 0;
 }
 
 /*--------------------------------------------------------------
