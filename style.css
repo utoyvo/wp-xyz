@@ -20,6 +20,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Typography
 # Accessibility
 # Alignments
 # Clearings
@@ -204,6 +205,100 @@ template {
 
 [hidden] {
 	display: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	direction: ltr;
+	line-height: 1.2;
+	color: #222;
+	font-family: Monaco, Conasolas, Menlo, Lucida Console, Roboto Mono, SFMono-Regular, Consolas, Liberation Mono, Courier, monospace;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 16px;
+	clear: both;
+	font-weight: normal;
+}
+
+p {
+	margin: 0;
+	overflow: auto;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	display: block;
+	margin: 16px 0;
+	padding: 16px;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+blockquote p:first-child:before {
+	content: "\f10d";
+	margin-right: 16px;
+	font-family: "Font Awesome 5 Free";
+	font-size: 32px;
+	font-weight: 900;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+address {
+	margin-bottom: 16px;
+}
+
+pre {
+	max-width: 100%;
+	line-height: 1.2;
+	margin-bottom: 16px;
+	padding: 16px;
+	background: #ddd;
+	color: #222;
+	border: 1px solid #ddd;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 16px;
+	overflow: auto;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 16px;
+}
+
+abbr, acronym {
+	border: 0;
+	font-weight: bolder;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+abbr[title], acronym[title] {
+	cursor: help;
+}
+
+mark, ins {
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+}
+
+big {
+	font-size: 1.4em;
 }
 
 /*--------------------------------------------------------------
