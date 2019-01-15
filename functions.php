@@ -68,23 +68,6 @@ if ( ! function_exists( 'wp_xyz_setup' ) ) :
 		) );
 
 		/*
-		 * Enable support for Post Formats.
-		 *
-		 * @link https://codex.wordpress.org/Post_Formats 
-		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'gallery',
-			'status',
-			'audio',
-			'chat',
-		) );
-
-		/*
 		 * Set up the WordPress core custom background feature.
 		 *
 		 * @link https://codex.wordpress.org/Custom_Backgrounds
@@ -162,6 +145,8 @@ add_action( 'widgets_init', 'wp_xyz_widgets_init' );
  */
 function wp_xyz_scripts() {
 	wp_enqueue_style( 'wp-xyz-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.min.css', array(), '5.5.0' );
 
 	wp_enqueue_script( 'wp-xyz-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
