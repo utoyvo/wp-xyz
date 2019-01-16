@@ -27,6 +27,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Accessibility
 # Alignments
 # Clearings
+# Layout
 # Content
 	## Posts and pages
 # Media
@@ -248,6 +249,7 @@ blockquote {
 	padding: 16px;
 	background: #eee;
 	border: 1px solid #ddd;
+	border-radius: .25em;
 }
 
 blockquote p:first-child:before {
@@ -531,12 +533,61 @@ a:visited {
 }
 
 /*--------------------------------------------------------------
-# Content
+# Layout
 --------------------------------------------------------------*/
-.updated:not(.published) {
-	display: none;
+#content {
+	margin-top: 16px;
+	overflow: hidden;
 }
 
+.single #primary,
+.page #primary,
+.no-sidebar #primary {
+	width: 100%;
+	float: none;
+}
+
+#primary {
+	width: 66.66666%;
+	float: left;
+}
+
+#secondary {
+	width: 33.33333%;
+	padding-left: 16px;
+	padding-right: 0;
+	float: right;
+}
+
+.container {
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+	#primary {
+		width: 100%;
+		padding: 0;
+		float: none;
+	}
+
+	#secondary {
+		width: 100%;
+		padding: 0;
+		float: none;
+	}
+
+	.container {
+		width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -550,6 +601,243 @@ a:visited {
 	font-size: 16px;
 	font-weight: 900;
 	vertical-align: middle;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.hentry {
+	position: relative;
+	margin-bottom: 16px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+.hentry .entry-header {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.hentry .entry-header .entry-title,
+.hentry .entry-header .entry-title a {
+	line-height: 1.1;
+	color: #222;
+	font-size: 24px;
+}
+
+.hentry .entry-header h1.entry-title {
+	font-size: 32px;
+}
+
+.hentry .entry-header .entry-meta {
+	margin-bottom: 16px;
+	line-height: 1;
+	color: #888;
+	font-size: 16px;
+}
+
+.hentry .entry-header .entry-meta a {
+	color: #222;
+	opacity: .9;
+	-webkit-transition: .4s;
+       -moz-transition: .4s;
+			transition: .4s;
+}
+
+.hentry .entry-header .entry-meta a:hover,
+.hentry .entry-header .entry-meta a:focus {
+	opacity: 1;
+}
+
+.hentry .entry-header .entry-meta .posted-on {
+	text-transform: lowercase;
+}
+
+.hentry .entry-header .entry-meta .posted-on,
+.hentry .entry-header .entry-meta .byline {
+	display: inline-block;
+	margin-left: 0;
+	margin-right: 16px;
+}
+
+.hentry .entry-header .entry-meta .byline .avatar {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 0;
+	margin-right: 8px;
+	vertical-align: middle;
+	background: #ddd;
+	border-radius: 50%;
+}
+
+.hentry .post-thumbnail {
+	display: block;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.hentry .post-thumbnail img {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.hentry a.post-thumbnail img {
+	-webkit-transition: all .4s;
+	   -moz-transition: all .4s;
+			transition: all .4s;
+}
+
+.hentry a.post-thumbnail:hover img {
+	-webkit-transform: scale(1.1);
+	   -moz-transform: scale(1.1);
+			transform: scale(1.1);
+}
+
+.hentry .entry-content,
+.hentry .entry-summary,
+.hentry .page-content {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.hentry .entry-content p,
+.hentry .entry-summary p,
+.hentry .page-content p {
+	margin-bottom: 16px;
+	line-height: 1.2;
+	word-wrap: break-word;
+}
+
+.hentry .entry-content p:last-child,
+.hentry .entry-summary p:last-child,
+.hentry .page-content p:last-child {
+	margin-bottom: 0;
+}
+
+.hentry .entry-content a {
+  text-decoration: underline;
+}
+
+.hentry .entry-content a:hover {
+	text-decoration: none;
+}
+
+.hentry .entry-summary .read-more {
+	display: inline;
+	margin-left: 8px;
+	margin-right: auto;
+}
+
+.hentry .entry-content iframe {
+	width: 100% !important;
+}
+
+.hentry .entry-footer {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+	line-height: 1;
+	overflow: hidden;
+}
+
+.hentry .entry-footer:empty {
+	display: none;
+}
+
+.hentry .entry-footer a {
+	color: #222;
+	-webkit-transition: .4s;
+       -moz-transition: .4s;
+			transition: .4s;
+}
+
+.hentry .entry-footer a:hover,
+.hentry .entry-footer a:focus {
+	color: #088;
+}
+
+.hentry .entry-footer .comments-link,
+.hentry .entry-footer .cat-links,
+.hentry .entry-footer .edit-link {
+	line-height: 1.2;
+}
+
+.hentry .entry-footer .comments-link,
+.hentry .entry-footer .cat-links {
+	float: left;
+}
+
+.hentry .entry-footer .edit-link {
+	float: right;
+}
+
+@media (min-width: 1024px) {
+	.single .hentry .entry-header,
+	.page .hentry .entry-header,
+	.single .hentry .entry-content,
+	.page .hentry .entry-content,
+	.single .hentry .entry-footer,
+	.page .hentry .entry-footer {
+		padding-left: 128px;
+		padding-right: 128px;
+	}
+}
+
+/* archives */
+.page-header {
+	margin-bottom: 16px;
+	padding: 16px 32px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+.page-header .page-title {
+	margin-bottom: 0;
+	letter-spacing: normal;
+}
+
+.page-header .page-description {
+	margin-top: 16px;
+	font-size: 16px;
+}
+
+.page-content {
+	margin-bottom: 16px;
+	padding: 16px 32px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+/* tags links */
+.tags-links {
+	margin-top: 16px;
+}
+
+.tag-cloud-link,
+.tags-links a {
+	font-size: 16px !important;
+	text-decoration: none !important;
+}
+
+.tag-cloud-link:before,
+.tags-links a:before {
+	content: "#";
 }
 
 /*--------------------------------------------------------------
