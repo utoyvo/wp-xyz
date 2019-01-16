@@ -30,7 +30,5 @@
 
 	<?php wp_xyz_post_thumbnail(); ?>
 
-	<footer class="entry-footer">
-		<?php wp_xyz_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer"><?php wp_xyz_entry_footer(); ?></footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
