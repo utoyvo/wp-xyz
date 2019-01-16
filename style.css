@@ -31,6 +31,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	## Posts and pages
 # Media
 	## Captions
+# Up-Down
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -585,4 +586,62 @@ object {
 	padding: 16px 0;
 	color: #888;
 	text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Up-Down
+--------------------------------------------------------------*/
+#up-down {
+	position: fixed;
+	left: 32px;
+	right: auto;
+	bottom: -64px;
+	display: block;
+	width: 64px;
+	height: 64px;
+	padding: 0;
+	background: #888;
+	opacity: .4;
+	border-radius: 100%;
+	cursor: pointer;
+	z-index: 99;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+			transition: all .3s;
+}
+
+#up-down:hover {
+	opacity: .8;
+}
+
+#up-down.up,
+#up-down.down {
+	bottom: 32px;
+}
+
+#up-down.up {
+	-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+			transform: rotate(0deg);
+}
+
+#up-down.down {
+	-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+			transform: rotate(180deg);
+}
+
+#up-down i {
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -10px;
+	color: #ddd;
+	font-size: 32px;
+}
+
+@media (max-width: 1024px) {
+	#up-down {
+		display: none;
+	}
 }
