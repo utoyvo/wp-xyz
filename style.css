@@ -35,6 +35,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Content
 	## Posts and pages
 	## Comments
+	## Footer
 # Media
 	## Captions
 	## Galleries
@@ -1108,6 +1109,38 @@ cite,
 --------------------------------------------------------------*/
 .bypostauthor {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+	background: #222;
+	color: #eee;
+}
+
+.site-footer a {
+	color: #eee;
+	opacity: 1;
+	-webkit-transition: .4s;
+	        transition: .4s;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+	opacity: .5;
+}
+
+.site-footer .site-info {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	text-align: left;
+}
+
+@media (max-width: 1024px) {
+	.site-footer .site-info {
+		text-align: center;
+	}
 }
 
 /*--------------------------------------------------------------
