@@ -2,7 +2,7 @@
 Theme Name: WP XYZ
 Theme URI: https://github.com/utoyvo/wp-xyz
 Author: utoyvo
-Author URI: http://utoyvo.xyz
+Author URI: https://utoyvo.xyz
 Description: WP XYZ is a flexible, simple and responsive WordPress theme designed for blog. It features an clean and concise design.
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -27,8 +27,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	## Fields
 # Navigation
 	## Links
+	## Menus
 	## Social navigation
 	## Navigation & Pagination
+	## Hamburgers
 # Accessibility
 # Alignments
 # Clearings
@@ -595,6 +597,87 @@ a:visited {
 }
 
 /*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	display: block;
+	margin-left: auto !important;
+	float: right;
+	line-height: 1;
+	color: #222;
+	white-space: nowrap;
+}
+
+.main-navigation ul {
+	display: block;
+	margin: 0;
+	list-style: none;
+}
+
+.main-navigation ul ul {
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	float: left;
+	background: #fff;
+	border: 1px solid #ddd;
+	z-index: 9999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+	display: inline-block;
+	float: left;
+	margin-bottom: 0;
+}
+
+.main-navigation a {
+	display: block;
+	padding: 24px;
+	vertical-align: middle;
+	color: #222;
+	font-size: 16px;
+	text-decoration: none;
+	-webkit-transition: .4s;
+       -moz-transition: .4s;
+	        transition: .4s;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	color: #088;
+}
+
+.main-navigation .current-menu-item {
+	-webkit-box-shadow: inset 0 4px 0 0 #088;
+	   -moz-box-shadow: inset 0 4px 0 0 #088;
+	        box-shadow: inset 0 4px 0 0 #088;
+}
+
+.main-navigation .current-menu-item a {
+	color: #088;
+}
+
+/*--------------------------------------------------------------
 ## Social navigation
 --------------------------------------------------------------*/
 .social-navigation {
@@ -618,7 +701,8 @@ a:visited {
 	position: relative;
 	display: inline-block;
 	line-height: 1;
-	padding: 0 8px;
+	padding-left: 8px;
+	padding-right: 8px;
 	opacity: 1;
 	font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
 	font-size: 32px;
@@ -778,17 +862,13 @@ a:visited {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	width: 50%;
 	float: left;
-	text-align: left;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	width: 50%;
 	float: right;
-	text-align: right;
 }
 
 .comment-navigation .nav-previous a,
@@ -804,6 +884,7 @@ a:visited {
 	border: 1px solid #ddd;
 	border-radius: .25em;
 	-webkit-transition: .4s;
+       -moz-transition: .4s;
 	        transition: .4s;
 }
 
@@ -824,6 +905,7 @@ a:visited {
 
 .navigation,
 .pagination {
+	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 16px;
 }
@@ -856,6 +938,112 @@ a:visited {
 .pagination .nav-links .page-numbers.current {
 	background: #088;
 	color: #fff;
+}
+
+/*--------------------------------------------------------------
+## Hamburgers
+--------------------------------------------------------------*/
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	padding: 16px;
+	color: inherit;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	font: inherit;
+	text-transform: none;
+	overflow: visible;
+	transition-property: opacity, filter;
+	transition-duration: .15s;
+	transition-timing-function: linear;
+}
+
+.hamburger:hover,
+.hamburger.is-active:hover  {
+	opacity: .8;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+	background: #222;
+}
+
+.hamburger-box {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner, 
+.hamburger-inner::before,
+.hamburger-inner::after {
+	position: absolute;
+	width: 32px;
+	height: 4px;
+	background: #000;
+	transition-property: transform;
+	transition-duration: .15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -8px;
+}
+
+.hamburger-inner::after {
+	bottom: -8px;
+}
+
+/* Squeeze */
+.hamburger--squeeze .hamburger-inner {
+	transition-duration: .075s;
+	transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+}
+
+.hamburger--squeeze .hamburger-inner::before {
+	transition: top .075s .12s ease, opacity .075s ease;
+}
+
+.hamburger--squeeze .hamburger-inner::after {
+	transition: bottom .075s .12s ease, transform .075s cubic-bezier(.55, .055, .675, .19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+	transform: rotate(45deg);
+	transition-delay: .12s;
+	transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+	transition: top .075s ease, opacity .075s .12s ease;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom .075s ease, transform .075s .12s cubic-bezier(.215, .61, .355, 1);
 }
 
 /*--------------------------------------------------------------
@@ -1382,6 +1570,61 @@ cite,
 }
 
 /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: auto;
+	padding-left: 32px;
+	padding-right: 32px;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	z-index: 9999;
+	-webkit-box-shadow: 0 .25em .125em 0 rgba(0, 0, 0, .05);
+			box-shadow: 0 .25em .125em 0 rgba(0, 0, 0, .05);
+}
+
+.site-header .site-branding {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	float: left;
+	line-height: 1;
+	color: #222;
+	white-space: nowrap;
+}
+
+.site-header .site-branding .custom-logo-link {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.site-header .site-branding .custom-logo-link .custom-logo {
+	width: 32px;
+	height: 32px;
+}
+
+.site-header .site-title {
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.site-header .site-title a {
+	color: #222;
+}
+
+/*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
@@ -1408,6 +1651,11 @@ cite,
 	text-align: left;
 }
 
+.site-footer .site-info .privacy-policy-link {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
 @media (max-width: 1024px) {
 	.site-footer .site-info {
 		text-align: center;
@@ -1418,6 +1666,7 @@ cite,
 ## Sidebar Bottom
 --------------------------------------------------------------*/
 #sidebar-bottom {
+	display: -ms-flexbox;
 	display: flex;
 	margin-top: 16px;
 }
@@ -1548,7 +1797,7 @@ object {
 --------------------------------------------------------------*/
 #up-down {
 	position: fixed;
-	left: 32px;
+	left: 16px;
 	right: auto;
 	bottom: -64px;
 	display: block;
@@ -1571,7 +1820,7 @@ object {
 
 #up-down.up,
 #up-down.down {
-	bottom: 32px;
+	bottom: 16px;
 }
 
 #up-down.up {
