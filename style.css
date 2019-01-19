@@ -562,6 +562,7 @@ select {
 	background-size: 8px 16px;
 	border: 1px solid #ddd;
 	border-radius: .25em;
+	cursor: pointer;
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 			appearance: none;
@@ -1149,7 +1150,8 @@ a:visited {
 
 .single #primary,
 .page #primary,
-.no-sidebar #primary {
+.no-sidebar #primary,
+.attachment #primary {
 	width: 100%;
 	float: none;
 }
@@ -1453,10 +1455,16 @@ cite,
 	text-decoration: none;
 }
 
+.hentry .entry-content .read-more,
 .hentry .entry-summary .read-more {
 	display: inline;
 	margin-left: 8px;
 	margin-right: auto;
+}
+
+.hentry .entry-content .entry-attachment {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .hentry .entry-content iframe {
@@ -1724,6 +1732,10 @@ object {
 	padding: 16px 0;
 	color: #888;
 	text-align: center;
+}
+
+.wp-caption-text:empty {
+	display: none;
 }
 
 /*--------------------------------------------------------------
