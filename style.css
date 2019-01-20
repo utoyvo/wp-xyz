@@ -1577,6 +1577,96 @@ cite,
 	display: block;
 }
 
+.comments-area {
+	display: block;
+	margin-bottom: 16px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	word-wrap: break-word;
+	overflow: auto;
+}
+
+.comments-area .no-comments {
+	padding: 16px 128px;
+	border-top: 1px solid #ddd;
+}
+
+.comments-area .no-comments:before {
+	content: "\f023";
+	margin-right: 16px;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+.comments-area .comments-title {
+	margin: 0;
+	padding: 16px 128px;
+	line-height: 1;
+	border-bottom: 1px solid #ddd;
+	font-size: 24px;
+}
+
+.comments-area .comment-list {
+	margin: 0;
+	padding: 16px 128px;
+	list-style-type: none;
+}
+
+.comments-area .comment-list .comment {
+	margin-bottom: 16px;
+}
+
+.comments-area .comment-list .comment:last-child {
+	margin-bottom: 0;
+}
+
+.comments-area .comment-list .comment .comment-author .avatar {
+	display: inline-block;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+}
+
+.comments-area .comment-list .comment .comment-author b {
+	vertical-align: top;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.says {
+	display: none;
+}
+
+.required {
+	color: #f00;
+}
+
+/* comment-respond */
+.comments-area .comment-respond {
+	padding: 16px 128px;
+	border-top: 1px solid #ddd;
+}
+
+.comments-area .comment-reply-title,
+.comments-area .logged-in-as,
+.comments-area .comment-form-comment,
+.comments-area .comment-notes {
+	margin-bottom: 0;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+@media (max-width: 1024px) {
+	.comments-area .no-comments,
+	.comments-area .comments-title,
+	.comments-area .comment-list,
+	.comments-area .comment-respond {
+		padding: 16px 32px;
+	}
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1689,13 +1779,7 @@ cite,
 }
 
 @media (max-width: 1024px) {
-	#sidebar-bottom {
-	}
-}
-
-@media (max-width: 1024px) {
-	#sidebar-bottom {
-	}
+	#sidebar-bottom {}
 }
 
 /*--------------------------------------------------------------
