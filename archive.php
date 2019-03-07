@@ -32,7 +32,17 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			/*
+			 * Posts navigation.
+			 *
+			 * @link https://codex.wordpress.org/Function_Reference/the_posts_pagination
+			 */
+			the_posts_pagination( array(
+				'mid_size'           => 1,
+				'prev_text'          => __( 'Previous page', 'wp-xyz' ),
+				'next_text'          => __( 'Next page', 'wp-xyz' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'wp-xyz' ) . '</span>',
+			) );
 
 		else :
 
