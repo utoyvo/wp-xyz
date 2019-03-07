@@ -10,7 +10,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php
-			// Start the loop.
+			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post(); ?>
 
@@ -29,8 +29,8 @@ get_header(); ?>
 								 */
 								$image_size = apply_filters( 'wp-xyz_attachment_size', 'full' );
 
-								echo wp_get_attachment_image( get_the_ID(), $image_size ); ?>
-
+								echo wp_get_attachment_image( get_the_ID(), $image_size );
+							?>
 							<figcaption class="wp-caption-text"><?php the_excerpt(); ?></figcaption>
 						</figure><!-- .entry-attachment -->
 
