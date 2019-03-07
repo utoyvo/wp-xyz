@@ -15,29 +15,29 @@
 	<footer id="colophon" class="site-footer">
 		<?php get_sidebar( 'content-bottom' ); ?>
 
-		<?php if ( has_nav_menu( 'social' ) ) : ?>
-			<nav class="social-navigation container" role="navigation">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'social',
-					'menu_class'     => 'social-links-menu',
-					'depth'          => 1,
-					'link_before'    => '<span class="screen-reader-text">',
-					'link_after'     => '</span>',
-				) ); ?>
-			</nav><!-- .social-navigation -->
-		<?php endif; ?>
+		<?php
+		if ( has_nav_menu( 'social' ) ) :
+			wp_nav_menu( array(
+				'theme_location'  => 'social',
+				'container'       => 'nav',
+				'container_class' => 'social-navigation container',
+				'menu_class'      => 'social-links-menu',
+				'depth'           => 1,
+				'link_before'     => '<span class="screen-reader-text">',
+				'link_after'      => '</span>',
+			) );
+		endif; ?>
 
 		<div class="site-info container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-xyz' ) ); ?>" target="_blank">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wp-xyz' ), 'WordPress' );	?>
+			<?php
+			/* translators: %s: CMS name, i.e. WordPress. */
+			printf( esc_html__( 'Proudly powered by %s.', 'wp-xyz' ), 'WordPress' );	?>
 			</a>
 
 			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'wp-xyz' ), 'wp-xyz', '<a href="http://utoyvo.xyz">utoyvo</a>' ); ?>
+			/* Privacy Policy */
+			printf( '<a href="%s">%s</a>', get_permalink( get_option( 'wp_page_for_privacy_policy' ) ), esc_html( __( 'Privacy Policy' ) ) ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
