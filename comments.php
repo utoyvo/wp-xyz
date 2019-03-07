@@ -41,7 +41,13 @@ if ( post_password_required() ) {
 			} ?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
+		<?php
+		the_comments_pagination( array(
+			'mid_size'           => 1,
+			'prev_text'          => __( 'Prev', 'wp-xyz' ),
+			'next_text'          => __( 'Next', 'wp-xyz' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Comment', 'wp-xyz' ) . '</span>',
+		) ); ?>
 
 		<ol class="comment-list">
 			<?php
@@ -53,7 +59,12 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php
-		the_comments_navigation();
+		the_comments_pagination( array(
+			'mid_size'           => 1,
+			'prev_text'          => __( 'Prev', 'wp-xyz' ),
+			'next_text'          => __( 'Next', 'wp-xyz' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Comment', 'wp-xyz' ) . '</span>',
+		) );
 
 		if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-xyz' ); ?></p>
