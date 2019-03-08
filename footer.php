@@ -37,7 +37,7 @@
 
 			<?php
 			/* Privacy Policy */
-			printf( '<a href="%s">%s</a>', get_permalink( get_option( 'wp_page_for_privacy_policy' ) ), esc_html( __( 'Privacy Policy' ) ) ); ?>
+			printf( '<a href="%s">%s</a>', get_permalink( get_option( 'wp_page_for_privacy_policy' ) ), esc_html( __( 'Privacy Policy', 'wp-xyz' ) ) ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
