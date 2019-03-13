@@ -250,7 +250,7 @@ function wp_xyz_get_customizer_css() {
 		.pagination .nav-links .page-numbers.current,
 		.widget_calendar tbody a {
 			background: <?php echo $link_color; ?>;
-			border-color: <?php echo $accent_color; ?>;
+			border-color: <?php echo $link_color; ?>;
 		}
 	<?php
 	}
